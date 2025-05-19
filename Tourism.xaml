@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginForm.Tourism"
+             Title="Tourism">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left sidebar -->
+        <Grid Grid.Column="0" BackgroundColor="#2E8B57">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Logo Area -->
+            <Grid Grid.Row="0" Padding="12,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Source="idsc_logo.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" />
+                <StackLayout Grid.Column="1" VerticalOptions="Center" Margin="5,0,0,0">
+                    <Label Text="IDSC" TextColor="White" FontSize="14" FontAttributes="Bold" />
+                    <Label Text="Infotech-Development Systems Colleges Inc." TextColor="White" FontSize="10" />
+                    <Label Text="Student Portal" TextColor="White" FontSize="10" />
+                </StackLayout>
+            </Grid>
+
+            <!-- Menu Header -->
+            <Label Grid.Row="1" Margin="20,20,0,10" Text="MAIN MENU" TextColor="White" FontSize="14" FontAttributes="Bold" />
+
+            <!-- Menu Items -->
+            <ScrollView Grid.Row="2">
+                <StackLayout Spacing="10" Padding="10,0,10,20">
+
+                    <Button Text="Dashboard"
+        TextColor="White"
+        BackgroundColor="Transparent"
+        BorderColor="White"
+        BorderWidth="1"
+        CornerRadius="5"
+        Margin="0,5"
+        HorizontalOptions="Fill"
+        HeightRequest="40"
+        Clicked="OnDashboardClicked" />
+                    <Label Text="Students Information" TextColor="White" FontAttributes="Bold"  FontSize="14" Margin="0,10,0,0" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMenuTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <StackLayout x:Name="DropDownPanel" IsVisible="False" Spacing="5">
+                        <Button Text="Students" BackgroundColor="#417B4A" TextColor="White" Clicked="StudentsList" />
+                        <Button Text="Documents" BackgroundColor="#417B4A" TextColor="White" />
+                        <Button Text="Payments" BackgroundColor="#417B4A" TextColor="White" />
+                    </StackLayout>
+
+                    <Frame BackgroundColor="#2E8B57" BorderColor="White" Padding="10" CornerRadius="5">
+                        <Label Text="Instructors Information" TextColor="White" HorizontalOptions="Center" />
+                    </Frame>
+
+                    <StackLayout Margin="15,0,0,0" Spacing="10">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="instructor_icon.png" HeightRequest="20" WidthRequest="20" />
+                            <Label Text="Instructor" TextColor="White" VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+        <!-- Main content -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Top header -->
+            <Grid Grid.Row="0" BackgroundColor="#2E8B57" Padding="15,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Text="1st Semester A.Y. 2025-2026" VerticalOptions="Center" TextColor="White" />
+
+                <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="15">
+                    <Image Source="notification_icon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" />
+                    <Image Source="dark_mode_icon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" />
+                    <Frame CornerRadius="20" IsClippedToBounds="True" Padding="0" HeightRequest="40" WidthRequest="40">
+                        <Image Source="profile_pic.png" Aspect="AspectFill" />
+                    </Frame>
+                </StackLayout>
+            </Grid>
+
+            <!-- Main content area -->
+            <Grid Grid.Row="1" Padding="15" BackgroundColor="#F0F8F0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Students Header -->
+                <Grid Grid.Row="0" Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Column="0">
+                        <Label Text="Students" TextColor="#2E8B57" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="INFORMATION TECHNOLOGY" TextColor="#2E8B57" FontSize="12" />
+                    </StackLayout>
+
+                    <Frame Grid.Column="1" BackgroundColor="#2E8B57" BorderColor="#2E8B57" Padding="15,5" CornerRadius="5">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Course" TextColor="White" VerticalOptions="Center" />
+                            <Image Source="dropdown_icon.png" HeightRequest="15" WidthRequest="15" VerticalOptions="Center" Margin="5,0,0,0" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+                <!-- Table header -->
+                <Grid Grid.Row="1" BackgroundColor="#2E8B57" Padding="15,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="NAME" TextColor="White" FontAttributes="Bold" />
+                    <Label Grid.Column="1" Text="STUDENT NO." TextColor="White" FontAttributes="Bold" />
+                    <Label Grid.Column="2" Text="PROGRAM" TextColor="White" FontAttributes="Bold" />
+                    <Label Grid.Column="3" Text="YEAR" TextColor="White" FontAttributes="Bold" />
+                </Grid>
+
+                <!-- Table data -->
+                <StackLayout Grid.Row="2" Spacing="0">
+                    <!-- Row 1 -->
+                    <Grid BackgroundColor="#3EA368" Padding="15,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="Arellano Ruby, O." TextColor="White" />
+                        <Label Grid.Column="1" Text="123456789" TextColor="White" />
+                        <Label Grid.Column="2" Text="Information Technology" TextColor="White" />
+                        <Label Grid.Column="3" Text="2nd Year" TextColor="White" />
+                    </Grid>
+
+                    <!-- Row 2 -->
+                    <Grid BackgroundColor="#3EA368" Padding="15,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="Baguio Hazel Ann" TextColor="White" />
+                        <Label Grid.Column="1" Text="456789123" TextColor="White" />
+                        <Label Grid.Column="2" Text="Information Technology" TextColor="White" />
+                        <Label Grid.Column="3" Text="2nd Year" TextColor="White" />
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

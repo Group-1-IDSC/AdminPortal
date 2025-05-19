@@ -1,0 +1,49 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginForm.InstructorPage"
+             BackgroundColor="White">
+    <ScrollView>
+
+
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <!-- Header -->
+
+
+
+
+            <Grid BackgroundColor="#145A32" Padding="10">
+                <Label Text="IDSC" FontSize="24" TextColor="White" FontAttributes="Bold" />
+                <Label Text="1st Semester A.Y. 2025-2026" HorizontalOptions="End" TextColor="White" FontAttributes="Bold" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnInstructorTapped" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+
+            <!-- Profile and Schedule -->
+            <Frame BackgroundColor="#1E8449" CornerRadius="10" Padding="10">
+
+                <VerticalStackLayout>
+                    <Image Source="profile_placeholder.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" />
+                    <Label Text="Jay Carlo Ribaya" FontSize="20" TextColor="White" HorizontalOptions="Center"/>
+                    <Label Text="Instructor Number: 345871" FontSize="14" TextColor="White" HorizontalOptions="Center"/>
+
+                    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto" Padding="10">
+                        <Label Text="PROGRAM" TextColor="White" FontAttributes="Bold"/>
+                        <Label Text="COURSE" TextColor="White" FontAttributes="Bold" Grid.Column="1"/>
+                        <Label Text="TIME SCHEDULE" TextColor="White" FontAttributes="Bold" Grid.Column="2"/>
+                        <Label Text="ROOM" TextColor="White" FontAttributes="Bold" Grid.Column="3"/>
+                        <Label Text="INSTRUCTOR" TextColor="White" FontAttributes="Bold" Grid.Column="4"/>
+
+                        <!-- Row Data -->
+                        <Label Text="Information Technology" Grid.Row="1" TextColor="White"/>
+                        <Label Text="Computer Programming Architecture" Grid.Row="1" Grid.Column="1" TextColor="White"/>
+                        <Label Text="TUESDAY 10:30AM - 12:00PM" Grid.Row="1" Grid.Column="2" TextColor="White"/>
+                        <Label Text="28" Grid.Row="1" Grid.Column="3" TextColor="White"/>
+                        <Label Text="Jay Carlo Ribaya" Grid.Row="1" Grid.Column="4" TextColor="White"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
